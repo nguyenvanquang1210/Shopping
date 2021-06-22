@@ -1,12 +1,16 @@
 <?php
-define('DB_SERVER','localhost');
-define('DB_USER','root');
-define('DB_PASS' ,'');
-define('DB_NAME', 'shopping');
-$con = mysqli_connect(DB_SERVER,DB_USER,DB_PASS,DB_NAME);
-// Check connection
-if (mysqli_connect_errno())
-{
- echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
+
+$conn_string = "host=ec2-3-226-134-153.compute-1.amazonaws.com
+
+"
+        . " port=5432 dbname=dc3d9vo0l807ha"
+        . " user=oefxutdewjgfjs"
+        . " password=f31c52d869f031eaee254a653fa6915eff1254cfdd1411fc1d16ed5c5b5502cd";
+$db = pg_connect($conn_string);
+//connect to a database named "test" on the host "sheep" with a username and password
+   if(!$db) {
+      echo "Error : Unable to open database\n";
+   } else {
+      echo "Opened database successfully quang\n";
+   }
 ?>
